@@ -1,19 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alazzari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 11:49:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/01/22 17:10:23 by alazzari         ###   ########.fr       */
+/*   Created: 2022/01/22 17:22:34 by alazzari          #+#    #+#             */
+/*   Updated: 2022/01/22 17:23:35 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
-//#include <stdio.h>
-//#include <fcntl.h>
 
 char	*ft_newline(char *store)
 {
