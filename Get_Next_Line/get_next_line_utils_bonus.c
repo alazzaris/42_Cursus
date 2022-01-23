@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alazzari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:23:06 by alazzari          #+#    #+#             */
-/*   Updated: 2022/01/22 17:23:09 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/01/23 15:32:37 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(char *s)
 {

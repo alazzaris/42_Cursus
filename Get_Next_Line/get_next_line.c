@@ -6,14 +6,12 @@
 /*   By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 11:49:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/01/22 17:10:23 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:19:05 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <unistd.h>
-//#include <stdio.h>
-//#include <fcntl.h>
 
 char	*ft_newline(char *store)
 {
@@ -25,7 +23,7 @@ char	*ft_newline(char *store)
 		return (NULL);
 	while (store[i] && store[i] != '\n')
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = (char *)malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (NULL);
 	i = 0;

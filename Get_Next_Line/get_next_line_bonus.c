@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alazzari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/22 17:22:34 by alazzari          #+#    #+#             */
-/*   Updated: 2022/01/22 17:23:35 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/01/23 16:36:10 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include <unistd.h>
+#include "get_next_line_bonus.h"
 
 char	*ft_newline(char *store)
 {
@@ -23,7 +22,7 @@ char	*ft_newline(char *store)
 		return (NULL);
 	while (store[i] && store[i] != '\n')
 		i++;
-	str = (char *)malloc(sizeof(char) * (i + 1));
+	str = (char *)malloc(sizeof(char) * (i + 2));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -76,7 +75,7 @@ char	*ft_read(int fd, char *store)
 	if (!buffer)
 		return (NULL);
 	read_result = 1;
-	while (!ft_strchr(store, '\n') && read_result != 0)
+	while (!ft_strchr(store, '\n') && read_result)
 	{
 		read_result = read(fd, buffer, BUFFER_SIZE);
 		if (read_result == -1)
