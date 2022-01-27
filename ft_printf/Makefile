@@ -5,66 +5,47 @@
 #                                                     +:+ +:+         +:+      #
 #    By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/24 14:04:28 by alazzari          #+#    #+#              #
-#    Updated: 2022/01/24 17:37:34 by alazzari         ###   ########.fr        #
+#    Created: 2022/01/11 16:05:27 by alazzari          #+#    #+#              #
+#    Updated: 2022/01/27 17:58:27 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-LIBFT_NAME = libft.a
+LIBFT = ./libft
 
-CC = gcc
+LIBFT_LIB = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
+SRCS = ft_printf.c \
+		ft_printf_hex.c \
+		ft_printf_ptr.c \
+		ft_printf_unsigned.c \
+		ft_printf_utils.c \
 
-ARFLAGS = -rcs
+OBJS	= $(SRCS:.c=.o)
+RM		= rm -f
+LIBC	= ar -rcs
+FLAGS	= -Wall -Wextra -Werror
+INCS	= ./
 
-LIBFT_DIR = libft
+.c.o :
+	${CC} $(FLAGS) -c $< -o $(<:.c=.o) -I$(INCS)
 
-SRC_DIR = src
 
-OBJ_DIR = obj
-
-SRC_FILES = ft_printf.c \
-
-OBJ_FILES = $(SRC_FILES:%.c=%.o)
-
-LIBFT_FILES = libft.a
-
-SRC = $(addprefix $(SRC_DIR))/, $(SRC_FILES))
-
-OBJ = $(addprefix $(OBJ_DIR))/, $(OBJ_FILES))
-
-LIBFT = $(addprefix $(LIBFT_DIR))/, $(LIBFT_FILES))
-
-.PHONY: all bonus clean fclean re
+$(NAME): ${OBJS}
+	make all -C $(LIBFT)/
+	cp $(LIBFT)/$(LIBFT_LIB) $(NAME)
+	$(LIBC) $(NAME) $(OBJS)
 
 all: $(NAME)
-
-$(NAME): $(LIBFT) $(OBJ)
-	cp $(LIBFT) .
-	cp $(LIBFT_NAME) $(NAME)
-	ar $(ARFLAGS) $@ $(OBJ)
-
-bonus: $(NAME)
-
-$(LIBFT):
-	all -sC $(LIBFT_DIR)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
+    
+fclean: clean
+	$(RM) $(NAME)
+	make clean -C $(LIBFT)
 
 clean:
-	clean -sC $(LIBFT_DIR)
-	rm -rf $(LIBFT_NAME)
-	rm -rf $(OBJ_DIR)
-
-fclean: clean
-	fclean -sC $(LIBFT_DIR)
-	rm -rf $(NAME)
-
+	$(RM) $(OBJS)
+	
 re: fclean all
+
+.PHONY: all clean fclean re .c.o
