@@ -12,12 +12,11 @@
 
 #include <unistd.h>
 
-int	ft_check(char *str, char c, int len)
+int	ft_char(char c, char *str)
 {
 	int	i;
-
-	i = 0;
-	while (str[i] && (i < len || len == -1))
+	
+	while (str[i])
 		if (str[i++] == c)
 			return (1);
 	return (0);
@@ -25,19 +24,31 @@ int	ft_check(char *str, char c, int len)
 
 int	main(int argc, char *argv[])
 {
-	int	i;
+	int		i = 0;
+	int		j = 0;
+	char	res[255];
 
+	while (i < 255)
+		res[i++] = 0;
 	if (argc == 3)
 	{
 		i = 0;
 		while (argv[1][i])
 		{
-			if (!ft_check(argv[1], argv[1][i], i)
-				&& ft_check(argv[2], argv[1][i], -1))
-				write(1, &argv[1][i], 1);
+			if (ft_char(argv[1][i], argv[2]) && !ft_char(argv[1][i], res))
+			{
+				res[j] = argv[1][i];
+				j++;
+			}
 			i++;
 		}
 	}
-	write(1, "\n", 1);
+	i = 0;
+	while (res[i])
+	{
+		write(1, "\n", 1);
+		i++;
+	}
+	write (1, "\n", 1);
 	return (0);
 }
