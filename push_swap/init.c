@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:48:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 22:59:04 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 23:00:24 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_index(t_structs *str, t_stack *a)
 	unsigned int	j;
 	unsigned int	index;
 	int						*ctrl;
+
+	
 }
 
 int ft_sort()
