@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 20:23:51 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 21:17:35 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,21 @@ typedef struct s_structs
 	t_stack			b;
 	unsigned int	size;
 }	t_structs;
+
+//Operation.c
+void	ft_operation(t_stack *a, t_stack *b, char *action);
+void	swap(t_stack *a, t_stack *b, char *action);
+void	push(t_stack *from, t_stack *to);
+void	rotate(t_stack *a, t_stack *b, char *action);
+void	reverse_rotate(t_stack *a, t_stack *b, char *action);
+
+//Utils.c
+int		ft_max(t_stack *a);
+int		ft_min(t_stack *a);
+void	ft_to_top(t_structs *str,
+			unsigned int index, unsigned int size, char stack);
+int		ft_near(t_stack *a, int max_chunk, int min_chunk);
+char	*ft_action(t_stack *a, t_stack *b,
+			unsigned int index_a, unsigned int index_b);
 
 #endif

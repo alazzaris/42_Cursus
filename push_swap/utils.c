@@ -6,13 +6,13 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 19:46:26 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 20:44:19 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 21:11:13 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max(t_stack *a)
+int	ft_max(t_stack *a)
 {
 	int				max_value;
 	int				max_index;
@@ -35,7 +35,7 @@ int	get_max(t_stack *a)
 	return (max_index);
 }
 
-int	get_min(t_stack *a)
+int	ft_min(t_stack *a)
 {
 	int				min_value;
 	int				min_index;
@@ -68,6 +68,55 @@ void	ft_to_top(t_structs *str,
 	while (gap > 0)
 	{
 		if (stack == 'a')
-			ft_operation(&str->a, &str->b, get_action(&str->a, NULL, index, 0));
+			ft_operation(&str->a, &str->b, ft_action(&str->a, NULL, index, 0));
+		else if (stack == 'b')
+			ft_operation(&str->a, &str->b, ft_action(NULL, &str->b, 0, index));
+		gap--;
 	}
+}
+
+int	ft_near(t_stack *a, int max_chunk, int min_chunk)
+{
+	unsigned int	i;
+	unsigned int	near;
+
+	i = 0;
+	near = 0;
+	while (i < a->size)
+	{
+		if (min_chunk <= a->stack[i] && a->stack[i])
+		{
+			near = i;
+			break ;
+		}
+		i--;
+	}
+	return (near);
+}
+
+char	*ft_action(t_stack *a, t_stack *b,
+		unsigned int index_a, unsigned int index_b)
+{
+	if (a && index_a && index_b)
+	{
+		if (index_a <= a->size / 2 && index_b <= b->size / 2)
+			return ("rr\n");
+		else if (index_a <= a->size / 2 && index_b <= b->size / 2)
+			return ("rrr\n");
+	}
+	if (a && index_a)
+	{
+		if (index_a <= a->size / 2)
+			return ("ra\n");
+		else if (index_a > a->size / 2)
+			return ("rra\n");
+	}
+	if (b && index_b)
+	{
+		if (index_b <= b->size / 2)
+			return ("rb\n");
+		else if (index_b > b->size / 2)
+			return ("rrb\n");
+	}
+	return (NULL);
 }
