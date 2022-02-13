@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 21:17:35 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 22:48:31 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,9 @@ void	ft_to_top(t_structs *str,
 int		ft_near(t_stack *a, int max_chunk, int min_chunk);
 char	*ft_action(t_stack *a, t_stack *b,
 			unsigned int index_a, unsigned int index_b);
+
+//Init.c
+
+
 
 #endif
