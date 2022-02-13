@@ -6,19 +6,11 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 15:41:47 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 19:18:40 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 19:24:59 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	swap(t_stack *a, t_stack *b, char *action)
-{
-	if (!ft_strcmp(action, "sa\n") || !ft_strcmp(action, "ss\n"))
-		ft_swap(&a->stack[0], &a->stack[1]);
-	if (!ft_strcmp(action, "sb\n") || !ft_strcmp(action, "ss\n"))
-		ft_swap(&b->stack[0], &b->stack[1]);
-}
 
 void	ft_operation(t_stack *a, t_stack *b, char *action)
 {
@@ -35,6 +27,14 @@ void	ft_operation(t_stack *a, t_stack *b, char *action)
 		|| !ft_strcmp(action, "rrr\n"))
 		reverse_rotate(a, b, action);
 	write(1, action, ft_strlen(action));
+}
+
+void	swap(t_stack *a, t_stack *b, char *action)
+{
+	if (!ft_strcmp(action, "sa\n") || !ft_strcmp(action, "ss\n"))
+		ft_swap(&a->stack[0], &a->stack[1]);
+	if (!ft_strcmp(action, "sb\n") || !ft_strcmp(action, "ss\n"))
+		ft_swap(&b->stack[0], &b->stack[1]);
 }
 
 void	push(t_stack *from, t_stack *to)
