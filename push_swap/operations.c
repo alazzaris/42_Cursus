@@ -6,11 +6,9 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 15:41:47 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/13 15:41:54 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/13 16:21:59 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "push_swap.h"
 
 void	do_op(t_stack *a, t_stack *b, char *action)
 {
