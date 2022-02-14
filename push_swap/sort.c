@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:32:38 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 23:08:05 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:47:18 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_five(t_structs *s)
 		lowest = ft_lowest(&s->a);
 		if (s->b.size == 2)
 		{
-			ft_sort_three(s);
+			ft_three(s);
 			ft_operation(&s->a, &s->b, "pa\n");
 			ft_operation(&s->a, &s->b, "pa\n");
 		}
@@ -64,8 +64,8 @@ void	ft_hundred(t_structs *s, int chunk_size)
 			chunk_size = s->a.size / 5;
 		while (s->a.size && s->b.size < max_chunk)
 		{
-			get_closest_hundred(s, max_chunk);
-			ft_to_top(s, get_previous(&s->b, &s->a.stack[0]), s->b.size, 'b');
+			ft_closest_hundred(s, max_chunk);
+			ft_to_top(s, ft_previous(&s->b, &s->a.stack[0]), s->b.size, 'b');
 		}
 	}
 }

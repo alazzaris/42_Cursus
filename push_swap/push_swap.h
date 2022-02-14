@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 23:08:10 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:46:12 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		ft_max(t_stack *a);
 int		ft_min(t_stack *a);
 void	ft_to_top(t_structs *s,
 			unsigned int index, unsigned int size, char stack);
-int		ft_near(t_stack *a, int max_chunk, int min_chunk);
+int		ft_closest(t_stack *a, int max_chunk, int min_chunk);
 char	*ft_action(t_stack *a, t_stack *b,
 			unsigned int index_a, unsigned int index_b);
 
@@ -68,6 +68,8 @@ void	ft_five(t_structs *s);
 void	ft_hundred(t_structs *s, int chunk_size);
 
 //Max_sort.c
+void	ft_closest_hundred(t_structs *s, int max_chunk);
+int		ft_previous(t_stack *b, int number);
 
 //Main.c
 void	ft_exit(t_structs *s, char *error_message, int status);
