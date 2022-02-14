@@ -18,8 +18,6 @@ void	ft_index(t_structs *str, t_stack *a)
 	unsigned int	j;
 	unsigned int	index;
 	int						*ctrl;
-
-	
 }
 
 int ft_sort()
