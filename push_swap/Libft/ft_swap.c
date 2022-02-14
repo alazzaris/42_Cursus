@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 22:48:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 19:20:26 by alazzari         ###   ########.fr       */
+/*   Created: 2022/02/14 19:02:46 by alazzari          #+#    #+#             */
+/*   Updated: 2022/02/14 19:05:09 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_index(t_structs *str, t_stack *a)
+void	ft_swap(int *a, int *b)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	index;
-	int				*control;
+	int	temp;
 
-	i = 0;
-	control = ft_calloc (a->size, sizeof(int));
-	
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
-
-int ft_sort()
-{}
-
-int ft_overflow()
-{}
-
-void    ft_stacks()
-{}
-
-void    ft_check()
-{}
