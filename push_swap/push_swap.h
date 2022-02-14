@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 23:46:12 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/15 00:13:10 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <limits.h>
-# include "libft.h"
+# include "./libft/libft.h"
 
 typedef struct s_chunk
 {

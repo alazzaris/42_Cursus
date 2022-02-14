@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 23:11:34 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 23:44:44 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/14 23:56:55 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ void	ft_closest_hundred(t_structs *s, int max_chunk)
 				closest, ft_previous(&s->b, s->a.stack[closest]));
 		if (closest > s->b.size && !ft_strcmp(action, "ra\n")
 			&& ft_previous(&s->b, s->a.stack[closest]))
-			do_op(&s->a, &s->b, "rr\n");
+			ft_operation(&s->a, &s->b, "rr\n");
 		else if (s->a.size - closest > s->b.size && !ft_strcmp(action, "rra\n")
 			&& ft_previous(&s->b, s->a.stack[closest]))
-			do_op(&s->a, &s->b, "rrr\n");
+			ft_operation(&s->a, &s->b, "rrr\n");
 		else
-			do_op(&s->a, &s->b, action);
+			ft_operation(&s->a, &s->b, action);
 		closest = ft_closest(&s->a, max_chunk, 0);
 	}
 }
 
-int	ft_previous(t_stack *b, int nb)
+int	ft_previous(t_stack *b, int number)
 {
 	unsigned int	i;
 	int				prev_value;
@@ -47,7 +47,7 @@ int	ft_previous(t_stack *b, int nb)
 	prev = 0;
 	while (b && i < b->size)
 	{
-		if (prev_value < b->stack[i] && b->stack[i] < nb)
+		if (prev_value < b->stack[i] && b->stack[i] < number)
 		{
 			prev_value = b->stack[i];
 			prev_index = i;
