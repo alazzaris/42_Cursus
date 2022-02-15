@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alazzari <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/11 16:05:27 by alazzari          #+#    #+#              #
-#    Updated: 2022/01/16 18:13:58 by alazzari         ###   ########.fr        #
+#    Updated: 2022/02/15 01:22:57 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS = ft_atoi.c \
 	   ft_strlcat.c \
 	   ft_strlcpy.c \
 	   ft_strlen.c \
+	   ft_swap.c \
 	   ft_strncmp.c \
 	   ft_memset.c \
 	   ft_tolower.c \
