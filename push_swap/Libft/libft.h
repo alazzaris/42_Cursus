@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:05:12 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:21:18 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/15 02:15:24 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_swap(int *a, int *b);
+int		ft_strcmp(const char *s1, const char *s2);
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
