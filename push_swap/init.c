@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:48:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/14 23:03:11 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/15 01:35:03 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_is_overflow(const char *str)
 	return (0);
 }
 
-void	ft_stacks(t_structs *s, int size)
+void	ft_stack(t_structs *s, int size)
 {
 	s->size = size;
 	s->a.size = size;
@@ -98,9 +98,9 @@ void	ft_check(t_structs *s, int argc, char **argv)
 	{
 		j = i;
 		while (++j <= s->size)
-			if (ft_atoi(argv[i] == ft_atoi(argv[j]))
-				&& ft_isdigit(argv[j][0] && argv[j][0] != '-'
-					&& ft_isdigit(argv[i][0] && argv[i][0] != '-')))
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j])
+				&& ft_isdigit(argv[j][0]) && argv[j][0] != '-'
+					&& ft_isdigit(argv[i][0]) && argv[i][0] != '-')
 				ft_exit(s, "Error: Duplicate Arguments\n", -1);
 		if ((!ft_isdigit(argv[i][0] && (argv[i][0] != '-' || argv[i][1] == 0)))
 			|| ft_is_overflow(argv[i]))
