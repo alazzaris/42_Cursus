@@ -6,7 +6,7 @@
 #    By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:26:55 by alazzari          #+#    #+#              #
-#    Updated: 2022/02/16 22:47:29 by alazzari         ###   ########.fr        #
+#    Updated: 2022/02/16 23:03:51 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,10 @@ LIBFT_LIB	=	libft.a
 SRC	=	main.c \
 		init.c \
 		operations.c \
-		sort.c \
+		sort_1.c \
+		sort_2.c \
+		sort_3.c \
 		utils.c \
-		max_sort.c \
 
 OBJ		=	$(SRC:.c=.o)
 RM		=	rm -f

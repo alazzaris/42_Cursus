@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/16 20:14:16 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 23:02:26 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,16 @@ int		ft_is_overflow(const char *str);
 void	ft_init_stack(t_structs *s, int size);
 void	ft_check(t_structs *s, int argc, char **argv);
 
-//Sort.c
+//Sort_1.c
 void	ft_three(t_structs *s);
 void	ft_five(t_structs *s);
 void	ft_hundred(t_structs *s, int chunk_size);
 
-//Max_sort.c
+//Sort_2.c
 void	ft_closest_hundred(t_structs *s, int max_chunk);
 int		ft_previous(t_stack *b, int number);
+
+//Sort3.c
 
 //Main.c
 void	ft_exit(t_structs *s, char *error_message, int status);

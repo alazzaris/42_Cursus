@@ -6,7 +6,10 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 23:00:36 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/16 23:00:37 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 23:02:54 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
+
+t_chunk
