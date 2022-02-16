@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 19:22:15 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:34:02 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 20:14:11 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 {
 	t_structs	s;
 
-	ft_stack(&s, argc - 1);
+	ft_init_stack(&s, argc - 1);
 	ft_check(&s, argc, argv);
 	if (ft_is_sort(s.a))
 		ft_exit(&s, "", 0);

@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:35:35 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 20:14:16 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_action(t_stack *a, t_stack *b,
 void	ft_index(t_structs *s, t_stack *a);
 int		ft_is_sort(t_stack a);
 int		ft_is_overflow(const char *str);
-void	ft_stack(t_structs *s, int size);
+void	ft_init_stack(t_structs *s, int size);
 void	ft_check(t_structs *s, int argc, char **argv);
 
 //Sort.c

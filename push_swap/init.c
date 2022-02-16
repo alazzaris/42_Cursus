@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 22:48:08 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:35:03 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 20:14:01 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_is_overflow(const char *str)
 	return (0);
 }
 
-void	ft_stack(t_structs *s, int size)
+void	ft_init_stack(t_structs *s, int size)
 {
 	s->size = size;
 	s->a.size = size;
