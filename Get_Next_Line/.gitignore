@@ -16,3 +16,9 @@
 
 # Debug files
 *.dSYM/
+
+# VSCODE
+.vscode
+
+#.gitignore
+.gitignore
