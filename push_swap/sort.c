@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:32:38 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:40:38 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:54:31 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	ft_three(t_structs *s)
 {
-	unsigned int	highest;
-	unsigned int	lowest;
+	unsigned int	max;
+	unsigned int	min;
 
 	while (!ft_is_sort(s->a))
 	{
-		highest = ft_highest(&s->a);
-		lowest = ft_lowest(&s->a);
-		if (highest == 0 && lowest == 1)
+		max = ft_max(&s->a);
+		min = ft_min(&s->a);
+		if (max == 0 && min == 1)
 			ft_operation(&s->a, &s->b, "ra\n");
-		else if (highest == 1 && lowest == 2)
+		else if (max == 1 && min == 2)
 			ft_operation(&s->a, &s->b, "rra\n");
 		else
 			ft_operation(&s->a, &s->b, "sa\n");
@@ -32,22 +32,22 @@ void	ft_three(t_structs *s)
 
 void	ft_five(t_structs *s)
 {
-	unsigned int	lowest;
+	unsigned int	min;
 
 	while (!ft_is_sort(s->a) || s->b.size)
 	{
-		lowest = ft_lowest(&s->a);
+		min = ft_min(&s->a);
 		if (s->b.size == 2)
 		{
 			ft_three(s);
 			ft_operation(&s->a, &s->b, "pa\n");
 			ft_operation(&s->a, &s->b, "pa\n");
 		}
-		else if (!lowest && s->b.size < 2)
+		else if (!min && s->b.size < 2)
 			ft_operation(&s->a, &s->b, "pa\n");
-		else if (s->b.size < 2 && lowest < 3 && lowest)
+		else if (s->b.size < 2 && min < 3 && min)
 			ft_operation(&s->a, &s->b, "ra\n");
-		else if (s->b.size < 2 && lowest < 2 && lowest)
+		else if (s->b.size < 2 && min < 2 && min)
 			ft_operation(&s->a, &s->b, "rra\n");
 	}
 }
@@ -69,7 +69,7 @@ void	ft_hundred(t_structs *s, int chunk_size)
 			ft_operation(&s->a, &s->b, "pb\n");
 		}
 	}
-	ft_to_top(s, ft_highest(&s->b), s->b.size, 'b');
+	ft_to_top(s, ft_max(&s->b), s->b.size, 'b');
 	while (s->b.size)
 		ft_operation(&s->a, &s->b, "pa\n");
 }

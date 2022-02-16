@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 23:11:34 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 01:57:16 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/16 22:55:04 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ int	ft_previous(t_stack *b, int number)
 		i++;
 	}
 	if (!prev)
-		return (ft_highest(b));
+		return (ft_max(b));
 	return (prev_index);
 }

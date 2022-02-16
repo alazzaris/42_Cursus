@@ -6,7 +6,7 @@
 #    By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/16 22:26:55 by alazzari          #+#    #+#              #
-#    Updated: 2022/02/16 22:45:28 by alazzari         ###   ########.fr        #
+#    Updated: 2022/02/16 22:47:29 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBFT_LIB	=	libft.a
 
 SRC	=	main.c \
 		init.c \
-		operation.c \
+		operations.c \
 		sort.c \
 		utils.c \
 		max_sort.c \
