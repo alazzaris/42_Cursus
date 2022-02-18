@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 18:36:35 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/18 14:48:48 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:06:12 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void	ft_check(t_structs *s, int argc, char **argv);
 void	ft_three(t_structs *s);
 void	ft_five(t_structs *s);
 void	ft_hundred(t_structs *s, int chunk_size);
+void	ft_sort_chunk(t_structs *s);
 
 //Sort_2.c
 void	ft_closest_hundred(t_structs *s, int max_chunk);
@@ -73,8 +74,8 @@ int		ft_previous(t_stack *b, int number);
 
 //Sort3.c
 t_chunk	ft_chunk_one(t_structs *s, t_chunk chunk);
-t_chunk	ft_chunk_one(t_structs *s, t_chunk chunk);
-t_chunk	ft_chunk_one(t_structs *s, t_chunk chunk);
+t_chunk	ft_chunk_two(t_structs *s, t_chunk chunk);
+t_chunk	ft_chunk_three(t_structs *s, t_chunk chunk);
 void	push_chunk(t_structs *s, t_chunk chunk, char stack);
 
 //Main.c

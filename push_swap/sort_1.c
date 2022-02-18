@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 22:32:38 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/16 23:04:25 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/18 15:05:57 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,31 @@ void	ft_hundred(t_structs *s, int chunk_size)
 		ft_operation(&s->a, &s->b, "pa\n");
 }
 
+void	ft_sort_chunk(t_structs *s)
+{
+	t_chunk	chunk;
+
+	chunk.max = 0;
+	while (s->a.size)
+	{
+		chunk = ft_chunk_one(s, chunk);
+		push_chunk(s, chunk, 'b');
+	}
+	chunk.min = s->size;
+	while (s->b.size)
+	{
+		chunk = ft_chunk_two(s, chunk);
+		push_chunk(s, chunk, 'a');
+	}
+	chunk.max = s->size / 64;
+	while (s->a.size)
+	{
+		chunk = ft_chunk_three(s, chunk);
+		push_chunk(s, chunk, 'b');
+	}
+	while (s->b.size)
+	{
+		ft_to_top(s, ft_highest(&s->b), s->b.size, 'b');
+		ft_operation(&s->a, &s->b, "pa\n");
+	}
+}
