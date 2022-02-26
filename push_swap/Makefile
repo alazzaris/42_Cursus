@@ -6,7 +6,7 @@
 #    By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/26 01:09:46 by alazzari          #+#    #+#              #
-#    Updated: 2022/02/26 01:40:06 by alazzari         ###   ########.fr        #
+#    Updated: 2022/02/26 02:50:04 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS		=	main.c \
 				free.c \
 
 SRCS_B		=	checker.c \
+				ft_strcmp.c \
 
 OBJS		= 	${SRCS:.c=.o}
 
@@ -41,7 +42,7 @@ $(NAME):	$(OBJS) $(HEADER)
 			${CC} ${FLAGS} -o ${NAME} $(OBJS)
 
 $(CHECKER):	$(OBJS_B) $(HEADER)
-			@$(CC) $(FLAGS) -o ${CHECKER} $(OBJS_B)
+			@$(CC) $(FLAGS) -o ${CHECKER} $(OBJS) $(OBJS_B)
 
 all:		$(NAME) $(CHECKER)
 
