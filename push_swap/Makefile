@@ -6,7 +6,7 @@
 #    By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/26 01:09:46 by alazzari          #+#    #+#              #
-#    Updated: 2022/02/26 01:14:04 by alazzari         ###   ########.fr        #
+#    Updated: 2022/02/26 01:40:06 by alazzari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,37 +23,38 @@ SRCS		=	main.c \
 				free.c \
 
 SRCS_B		=	checker.c \
-				
 
+OBJS		= 	${SRCS:.c=.o}
 
-OBJS		= ${SRCS:.c=.o}
+OBJS_B		=	${SRCS_B:.c=.o}
 
+CC			=	gcc
 
-CC			= gcc
+FLAGS		=	-Wall -Wextra -Werror
 
-FLAGS		= -Wall -Wextra -Werror
-
-HEADER 		= push_swap.h
-
-GNL			= get_next_line.h
-
+HEADER 		=	push_swap.h
 
 %.o:%.c		${HEADER}
-			@${CC} ${FLAGC} -c $< -o ${<:.c=.o}
+			@${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
 $(NAME):	$(OBJS) $(HEADER)
 			${CC} ${FLAGS} -o ${NAME} $(OBJS)
 
-all:		$(NAME)
+$(CHECKER):	$(OBJS_B) $(HEADER)
+			@$(CC) $(FLAGS) -o ${CHECKER} $(OBJS_B)
+
+all:		$(NAME) $(CHECKER)
 
 clean:
 			rm -f $(OBJS)
+			rm -f $(OBJS_B)
 
-bonus:
+bonus:		$(CHECKER)
 
 fclean:		clean
 			rm -f $(NAME)
+			rm -f $(CHECKER)
 
 re:			fclean all
 
-.PHONY: 	all clean fclean re
+.PHONY: 	all clean fclean bonus re
