@@ -6,7 +6,7 @@
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 15:41:59 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/26 01:10:25 by alazzari         ###   ########.fr       */
+/*   Updated: 2022/02/28 22:49:37 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line.h"
 
 typedef struct s_stack
 {
