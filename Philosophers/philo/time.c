@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 02:06:31 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 02:12:18 by alazzari         ###   ########.fr       */
+/*   Created: 2022/05/14 15:39:30 by alazzari          #+#    #+#             */
+/*   Updated: 2022/05/14 17:23:22 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "philo.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+unsigned long	get_time(void)
 {
-	size_t	i;
-	size_t	diff;
+	struct timeval		tv;
+	unsigned long		time_ms;
 
-	if (!s1 || !s2)
-		return (1);
-	i = 0;
-	while (s1[i])
-	{
-		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (diff)
-			return (diff);
-		i++;
-	}
-	return (diff);
+	gettimeofday(&tv, NULL);
+	time_ms = tv.tv_sec * 1000 + tv.tv_usec / 1000;
+	return (time_ms);
+}
+
+void	ft_wait(int time_to_wait)
+{
+	unsigned long	time;
+
+	time = get_time();
+	while (get_time() < time + (unsigned long)time_to_wait)
+		usleep(500);
 }

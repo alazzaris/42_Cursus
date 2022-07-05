@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: alazzari <alazzari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 02:06:31 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 02:12:18 by alazzari         ###   ########.fr       */
+/*   Created: 2022/01/16 17:36:10 by alazzari          #+#    #+#             */
+/*   Updated: 2022/01/16 18:14:46 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	i;
-	size_t	diff;
+	t_list	*element;
 
-	if (!s1 || !s2)
-		return (1);
-	i = 0;
-	while (s1[i])
-	{
-		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (diff)
-			return (diff);
-		i++;
-	}
-	return (diff);
+	element = malloc(sizeof(t_list));
+	if (element == NULL)
+		return (NULL);
+	element->content = content;
+	element->next = NULL;
+	return (element);
 }

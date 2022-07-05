@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alazzari <alazzari@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: alazzari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/15 02:06:31 by alazzari          #+#    #+#             */
-/*   Updated: 2022/02/15 02:12:18 by alazzari         ###   ########.fr       */
+/*   Created: 2022/01/11 16:04:24 by alazzari          #+#    #+#             */
+/*   Updated: 2022/01/13 08:56:31 by alazzari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
-	size_t	diff;
+	unsigned int	index;
+	char			*last;
 
-	if (!s1 || !s2)
-		return (1);
-	i = 0;
-	while (s1[i])
+	last = 0;
+	index = 0;
+	while (s[index])
 	{
-		diff = (unsigned char)s1[i] - (unsigned char)s2[i];
-		if (diff)
-			return (diff);
-		i++;
+		if (s[index] == (char)c)
+			last = (char *)&s[index];
+		index++;
 	}
-	return (diff);
+	if ((char)c == s[index])
+		return ((char *)&s[index]);
+	return (last);
 }
